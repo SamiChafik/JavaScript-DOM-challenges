@@ -59,3 +59,42 @@ document.getElementById("toggleButton").addEventListener('click', () => {
 setInterval(function () {
 document.getElementById("time").textContent = new Date().toLocaleTimeString(); 
 }, 1000);
+
+// challenge 8
+document.getElementById("removeButton").addEventListener('click', () => {
+    const removable = document.getElementById("removable");
+
+    removable.remove();
+});
+
+// challenge 9
+document.getElementById("changeImageButton").addEventListener('click', () => {
+    const image = document.getElementById("image");
+    image.src = './enaa.svg';
+});
+
+// challenge 10
+const clickCount = document.getElementById("count");
+let count = 0;
+document.getElementById("counterButton").addEventListener('click', () => {
+    count ++;    
+    clickCount.textContent = count;
+});
+
+// challenge 11
+// document.getElementById("hoverDiv").addEventListener('mouseover', () => {
+//     const div = document.getElementById("hoverDiv");
+//     div.style = "background: red";
+// });
+// document.getElementById("hoverDiv").addEventListener('mouseout', () => {
+//     const div = document.getElementById("hoverDiv");
+//     div.style = "background: none";
+// });
+document.getElementById("hoverDiv").addEventListener('mouseover', () => {
+    const div = document.getElementById("hoverDiv");
+    div.classList.add("hover");
+});
+document.getElementById("hoverDiv").addEventListener('mouseout', () => {
+    const div = document.getElementById("hoverDiv");
+    div.classList.remove("hover");
+});
