@@ -98,3 +98,29 @@ document.getElementById("hoverDiv").addEventListener('mouseout', () => {
     const div = document.getElementById("hoverDiv");
     div.classList.remove("hover");
 });
+
+// challenge 12
+document.getElementById("buttonForDropdown").addEventListener('click', () => {
+    const textInput = document.getElementById("input");
+    let words = [];
+    const text = textInput.value;
+    words.push(text);
+    const select = document.getElementById("dropdown");
+
+    words.forEach(word => {
+        const dropdown = document.createElement('option');
+        dropdown.textContent = word;
+        select.appendChild(dropdown);
+    });    
+});
+
+// challenge 13
+
+const rows = document.querySelectorAll("#table tr");
+
+rows.forEach(row => {
+    row.addEventListener('click', function() {
+        rows.forEach(r => r.classList.remove("highlight"));
+        this.classList.add("highlight");
+    });
+});
