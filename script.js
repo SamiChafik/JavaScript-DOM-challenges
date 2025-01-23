@@ -115,7 +115,6 @@ document.getElementById("buttonForDropdown").addEventListener('click', () => {
 });
 
 // challenge 13
-
 const rows = document.querySelectorAll("#table tr");
 
 rows.forEach(row => {
@@ -123,4 +122,43 @@ rows.forEach(row => {
         rows.forEach(r => r.classList.remove("highlight"));
         this.classList.add("highlight");
     });
+});
+
+// challenge 14
+const list = document.querySelectorAll("#nestedList li");
+
+list.forEach(item => {
+   item.style.fontStyle = "italic"; 
+});
+
+// challenge 15
+document.getElementById("scrollButton").addEventListener('click', () => {
+    const target = document.getElementById("scrollTarget");
+
+    target.scrollIntoView({behavior : "smooth"});
+});
+
+// challenge 16
+const filterInput = document.getElementById("filterInput");
+const filterList = document.getElementById("filterList");
+const item = filterList.getElementsByTagName("li");
+const results = document.getElementById("showResults");
+
+filterInput.addEventListener('input',() => {
+    let found = false;
+
+    for (let i = 0; i < item.length; i++) {
+        
+        if (item[i].innerHTML.toLowerCase() == filterInput.value.toLowerCase()) {
+            found = true;
+        } 
+    }
+
+    if(!found) {
+        results.innerHTML = "not found !"
+        results.style.color = "red";
+    }else{
+        results.innerHTML = `found : ${filterInput.value}`;
+        results.style.color = "green";
+    }
 });
